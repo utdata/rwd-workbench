@@ -56,11 +56,11 @@ def process(table):
       'Location Name',
       'Location Address',
       'Obligation End Date'
-      ], value_vars=[
-        'Liquor Receipts',
-        'Wine Receipts',
-        'Beer Receipts'
-        ],
- var_name='Alcohol Type', value_name='Amount')
+    ], value_vars=[
+      'Liquor Receipts',
+      'Wine Receipts',
+      'Beer Receipts'
+    ],
+    var_name='Alcohol Type', value_name='Amount')
     return table
 ```
