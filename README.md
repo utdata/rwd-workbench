@@ -2,7 +2,7 @@
 
 Workbench is based on Python's [pandas]() module, which means you can leverage pandas to do things that Workbench can't do natively.
 
-This is a collection of some helpful things.
+This is a collection of some of those things.
 
 ## How it works
 
@@ -24,7 +24,7 @@ Your pandas dataframe object is called `table`, so you can reference columns as 
 
 ### Zfill values
 
-You can't define a datatype for a column before import, so sometimes fields like ZIP codes are imported as numbers and drop the leading zero, i.e., `02101` in Massachusets becomes `2101`.
+You can't define a datatype for a column before import, so sometimes text fields like ZIP codes are imported as numbers and drop the leading zero, i.e., `02101` in Massachusets becomes `2101`.
 
 This uses pandas' [zfill](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.zfill.html) to put zeros back at the beginning if they are missing.
 
@@ -34,11 +34,11 @@ def process(table):
     return table
 ```
 
-This would also be useful with education data that uses school numbers that start with zero, or Census bureau GEOid columns that start with Zero.
+I've found this also useful with education data that uses school numbers that start with zero and Census bureau data with GEOid columns.
 
 ## Reshaping with melt
 
-There is a "Reshape" function in Workbench, but it only allows you to reshape from Wide to Long on a single column, where sometimes you reshape on more than one.
+There is a "Reshape" function in Workbench, but it only allows you to reshape from Wide to Long on a single column, where sometimes you need to reshape on more than one.
 
 In this example we start with five columns of data:
 
@@ -48,11 +48,19 @@ But we want each "Receipt" value on its own row, but keep it's `Location Name`, 
 
 ![melted](images/wb-melted.png)
 
-Workbench will only allow us to "keep" a single columns, so we can use pandas [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html) function to reshape the data:
+Workbench will only allow us to "keep" a single column on a reshape from wide to long, but we can use pandas [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html) function to reshape the data:
 
 ```python
 def process(table):
-    table = table.melt(id_vars=['Location Name', 'Location Address', 'Obligation End Date'], value_vars=['Liquor Receipts', 'Wine Receipts', 'Beer Receipts'],
+    table = table.melt(id_vars=[
+      'Location Name',
+      'Location Address',
+      'Obligation End Date'
+      ], value_vars=[
+        'Liquor Receipts',
+        'Wine Receipts',
+        'Beer Receipts'
+        ],
  var_name='Alcohol Type', value_name='Amount')
     return table
 ```
