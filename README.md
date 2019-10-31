@@ -48,7 +48,7 @@ But we want each "Receipt" value on its own row, but keep it's `Location Name`, 
 
 ![melted](images/wb-melted.png)
 
-Workbench will only allow us to "keep" a single column on a reshape from wide to long, but we can use pandas [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html) function to reshape the data:
+Workbench will only allow us to "keep" a single column on a reshape from wide to long, but we can the **Formula** function in Workbench and the **python** setting to use the pandas-based [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html) function to reshape the data:
 
 ```python
 def process(table):
