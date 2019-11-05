@@ -118,14 +118,14 @@
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
     </datasource>
-    <datasource caption='mixedbev_wide' inline='true' name='federated.1hektrw0rcd8271dea9b306b42r5' version='18.1'>
+    <datasource caption='mixedbev_wide' inline='true' name='federated.1t8ps4k1jjiepc1gnb0c31rmw71b' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='mixedbev_wide' name='textscan.05cvwkb08gpdoy1f6kjcj0elrgar'>
+          <named-connection caption='mixedbev_wide' name='textscan.1wvigw415dm97k1g67obg07xqyio'>
             <connection class='textscan' directory='/Users/ccm346/Documents/rwd/rwd-workbench/data' filename='mixedbev_wide.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.05cvwkb08gpdoy1f6kjcj0elrgar' name='mixedbev_wide.csv' table='[mixedbev_wide#csv]' type='table'>
+        <relation connection='textscan.1wvigw415dm97k1g67obg07xqyio' name='mixedbev_wide.csv' table='[mixedbev_wide#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
             <column datatype='string' name='Location Name' ordinal='0' />
             <column datatype='string' name='Location Address' ordinal='1' />
@@ -229,7 +229,7 @@
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
-      <layout dim-ordering='alphabetic' dim-percentage='0.464957' measure-ordering='alphabetic' measure-percentage='0.535043' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.482051' measure-ordering='alphabetic' measure-percentage='0.517949' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
