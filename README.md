@@ -7,7 +7,7 @@ This is a collection of some of those things.
 ## How it works
 
 - In Workbench, create a new step and choose the [Python](http://help.workbenchdata.com/en/articles/1484226-python-editor) module.
-- Define a function called `process` that accepts a workbench table (as a `pd.DataFrame`) and returns the same. You can use the following packages:
+- Define a function called `process` that accepts the current data as `table` (which will be a `pd.DataFrame`) and return the same `table`. You can use the following packages:
   - math
   - pd ([Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html))
   - np ([numpy](https://docs.scipy.org/doc/numpy/reference/routines.html))
@@ -18,7 +18,7 @@ def process(table):
     return table
 ```
 
-Your pandas dataframe object is called `table`, so you can reference columns as `table['tablename']` or `table.tablename`.
+Your pandas dataframe object is called `table`, so you can reference columns as `table['columnname']` or `table.columnname`.
 
 ## Examples
 
